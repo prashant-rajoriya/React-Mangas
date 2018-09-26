@@ -28,13 +28,13 @@
   padding: 10px;
 }
 
-ul {
+.manga-card-details ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
 }
 
-li{
+.manga-card-details li{
   margin-right: 10px;
   border: 1px solid blue;
   border-radius: 5px;
