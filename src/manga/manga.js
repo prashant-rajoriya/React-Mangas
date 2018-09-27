@@ -9,11 +9,13 @@ class Manga extends Component {
     description : PropTypes.string.isRequired,
     img : PropTypes.string.isRequired,
     genre : PropTypes.arrayOf(PropTypes.string).isRequired,
+    onDelete : PropTypes.func.isRequired,
+    id : PropTypes.number.isRequired,
   };
 
   render(){
 
-    const {title, img, description} = this.props;
+    const {title, img, description, id, onDelete} = this.props;
     const genre = this.props.genre.map((val, i) => (
       <li key={i}>{val}</li>
     ));
@@ -29,6 +31,7 @@ class Manga extends Component {
         <ul>{genre}</ul>
         <h4>Description : </h4>
         <p>{description}</p>
+        <button onClick={() => onDelete(id)}>Delete</button>
       </div>
     </div>
     );

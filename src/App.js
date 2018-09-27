@@ -42,15 +42,39 @@ class App extends Component {
       nextMangaId : 3,
       showForm : false
     }
+
+    this.handleSave = this.handleSave.bind(this);
+    this.onDelete = this.onDelete.bind(this);
   }
   
+  handleSave(manga){
+    this.setState((prevState, props) => {
+      const newManga = {...manga, id : this.state.nextMangaId};
+      return {
+        nextMangaId : prevState.nextMangaId+1,
+        mangas : [...this.state.mangas, newManga],
+        showForm : false
+      }
+    })
+  }
+
+  onDelete(id){
+    const mangas = this.state.mangas.filter(manga => manga.id !== id)
+    this.setState({mangas});
+  }
 
   render() {
+    const {showForm} = this.state;
+
     return (
       <div className="App">
-        <NavBar/>
-        <MangaInput/>
-        <MangaList mangas = {this.state.mangas}/>
+        <NavBar onNewManga = {() => this.setState({showForm : true})}/>
+        {showForm ? 
+          <MangaInput
+            onSave = {this.handleSave}
+            onClose = {() => this.setState({showForm:false})}
+          /> : null}
+        <MangaList onDelete = {this.onDelete} mangas = {this.state.mangas}/>
       </div>
     );
   }

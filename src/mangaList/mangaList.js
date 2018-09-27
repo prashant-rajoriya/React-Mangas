@@ -7,12 +7,13 @@ export default class mangaList extends Component {
 
   static propTypes = {
     mangas : PropTypes.arrayOf(PropTypes.object).isRequired,
+    onDelete : PropTypes.func.isRequired,
   }
 
   render() {
-
+    const {onDelete} = this.props;
     const mangas = this.props.mangas.map((manga) => (
-      <Manga key={manga.id} {...manga}/>
+      <Manga key={manga.id} {...manga} onDelete = {onDelete}/>
     ));
 
     return (

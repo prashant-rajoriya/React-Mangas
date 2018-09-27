@@ -53,6 +53,7 @@ export default class MangaInput extends Component {
 
   render() {
     const {title, img, description} = this.state;
+    const {onClose} = this.props;
     const genreItems = this.state.genre.map((elem, i)=> (
       <div 
         className='manga-form-line'
@@ -137,7 +138,7 @@ export default class MangaInput extends Component {
           <button
             className='buttons'
             type='button'
-            // onClick={}
+            onClick={onClose}
           >
             Cancel
           </button>
