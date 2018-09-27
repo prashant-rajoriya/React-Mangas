@@ -39,7 +39,7 @@ class App extends Component {
           genre : ['Action', 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'Martial Arts', 'Mystery', 'Tragedy', 'Xuanhuan']
         }
       ],
-      nextMangaId : 3,
+      nextMangaId : 4,
       showForm : false
     }
 
