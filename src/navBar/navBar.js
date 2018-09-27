@@ -5,13 +5,13 @@ export default class NavBar extends Component {
   render() {
     return (
       <div className='navbar'>
-        <h2 className='logo'>Mangas</h2>
+        <a><h2 className='logo'>Mangas</h2></a>
         <div className='nav-items'>
           <ul>
-            <li>New Manga</li>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact Us</li>
+            <a><li>New Manga</li></a>
+            <a><li>Home</li></a>
+            <a><li>About</li></a>
+            <a><li>Contact Us</li></a>
           </ul>
         </div>
       </div>

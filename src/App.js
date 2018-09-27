@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MangaList from "./mangaList/mangaList";
+import MangaInput from './mangaInput/MangaInput';
 import NavBar from './navBar/navBar';
 import './App.css';
 
@@ -41,7 +42,6 @@ class App extends Component {
       nextMangaId : 3,
       showForm : false
     }
-
   }
   
 
@@ -49,6 +49,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar/>
+        <MangaInput/>
         <MangaList mangas = {this.state.mangas}/>
       </div>
     );
